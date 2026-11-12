@@ -4,64 +4,23 @@ public class Main {
     public static void main(String[] args) {
         // pet
         Pet pet = new Pet();
-        Pet pet1 = new Pet("Mercy");
-        Pet pet2 = new Pet("Jambi");
-        Pet pet3 = new Pet("kini");
-        Pet pet4 = new Pet("Queen");
-        Pet pet5 = new Pet("Tevine");
+        Pet pet1 = new Pet("1", "Jambi","Dog", 23.5F, 13.3, "Pauline", "Bone_dog", "Brown",false);
+        Pet pet2 = new Pet("2","Alex", "Cat",32.4F,12.5,"Wendy","Keys","Black", true);
+        Pet pet3 = new Pet("3","kini", "Dog", 34.7F, 12.5,"Mazhar", "beef", "white",false);
+        Pet pet4 = new Pet("4","Queen","Dog", 12.5F, 14.6, "kini","Toys", "brown",false);
 
-        pet1.name = "Jambi";
-        pet2.name = "Alex";
-        pet3.name = "kini";
-        pet4.name = "Queen";
-        pet5.name = "Tevine";
-
-        pet1.petId = String.valueOf(1);
-        pet2.petId = String.valueOf(2);
-        pet3.petId = String.valueOf(3);
-
-        pet1.type = "Dog";
-        pet2.type = "Cat";
-        pet3.type = "Dog";
-        pet4.type = "Rabbit";
-
-        System.out.println("PetId1: " + pet1.petId);
-        System.out.println("PetId2: " + pet2.petId);
-        System.out.println("PetId3: " + pet3.petId);
-        System.out.println("Name1: " +  pet1.name);
-        System.out.println("Name2: " +  pet2.name);
-        System.out.println("Name3: " +  pet3.name);
-        System.out.println("Type1: " +  pet1.type);
-        System.out.println("Type2: " +  pet3.type);
-        System.out.println("Type3: " +  pet3.type);
 
         //user?
 
-        User user1 = new User();
-        User user2 = new User();
-        User user3 = new User();
+        User user1 = new User("1","Pauline","Female",90876,"pauline@gmail.com");
+        User user2 = new User("2", "Wendy", "Female",879097, "wendy@gmail.com");
+        User user3 = new User("3", "Mazhar", "Male", 78654, "mazhar@gmail.com");
+        User user4 = new User("4","kini", "Female", 908658, "kini@gmail.com" );
 
         user1.UserId = String.valueOf(1);
-        user2.UserId = String.valueOf(2);
-        user3.UserId = String.valueOf(3);
-
-        user1.name = "Pauline";
-        user2.name = "Wendy";
-        user3.name = "Mazhar";
-
         user1.setEmail("mmwega13@gmail.com");
-        user2.setEmail("wendy@gmail.com");
-        user3.setEmail(("mazhar@gmail.com"));
-
         System.out.println("UserId1: " +  user1.UserId);
-        System.out.println("UserId2: " +  user2.UserId);
-        System.out.println("UserId3: " +  user3.UserId);
-        System.out.println("Name1: " +  user1.name);
-        System.out.println("Name2: " +  user2.name);
-        System.out.println("Name3: " +  user3.name);
-        System.out.println("Email1: " +  user1.getEmail());
-        System.out.println("Email2: " +  user2.getEmail());
-        System.out.println("Email3: " +  user3.getEmail());
+
 
         // Serves children
         // appointments
@@ -121,6 +80,24 @@ public class Main {
         pet1.addService((vaccination));
         System.out.println(pet1.getServices());
         System.out.println(pet1.getServices());
+        pet2.addService(appointments1);
+        pet2.addService(medications1);
+        pet2.addService(vaccination1);
+        System.out.println(pet2.getServices());
+
+        // Notification centre // polymorphism
+        INotification emailnotifer = new EmailNotifications();
+        INotification smsnotifer = new SMSNotifications();
+        System.out.println(user4);
+
+       //specific recipient receives the notifications
+        emailnotifer.sendNotification(
+                user1.getEmail(),
+                "Jambi's follow up appointment tomorrow!"
+        );
+        smsnotifer.sendNotification(user2.getEmail(),
+                "Upcoming babysitting");
+
 
 
 
