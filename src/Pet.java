@@ -1,141 +1,71 @@
 import java.util.ArrayList;
+import java.util.List;
 
+// info about the pet
 public class Pet {
-     String petId ;
-     String name ;
-     String type;
-     float weight;
-     double height;
-     String User;
-     String favorite_thing;
-     String color;
-     boolean petsitting;
+    private  String name ;
+    private  String type;
+    private String breed;
+    private float weight;
+    private int age;
 
-    // i want have a container where all pets have their services and so on
-    // arraylist
-    ArrayList<Services> services = new ArrayList<>();
+    //  a container so that the pets store vaccination, medication and app and food
+    // the services for each pet never mixes
+    List<Appointments> Appointments = new ArrayList<>();
+    List<Medications> Medications = new ArrayList<>();
+    List<Vaccinations> Vaccination = new Vaccinations();
+    List<Food> Food = new ArrayList<>();
+
 
 
     //  constructors
-    public Pet(String petId, String name, String type, float weight, double height,String User,String favorite_thing,
-               String color,boolean petsitting){
+    public String Pet(String name, String type, float weight, String breed, int age){
         this.name = name;
         this.type = type;
-        this.height = height;
-        this.favorite_thing = favorite_thing;
-        this.User = User;
         this.weight = weight;
-        this.petsitting = petsitting;
-        this.petId = petId;
-        this.color = color;
-    }
-
-    public Pet() {
+        this.breed = breed;
+        this.age = age;
 
     }
 
-    public Pet(String mercy) {
-    }
-
-    // convert to readable string
+    //  // convert to readable string
     @Override
     public String toString() {
         return "Pet{" +
-                "petId='" + petId + '\'' +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", type='" + type + '\'' +
+                ", breed='" + breed + '\'' +
                 ", weight=" + weight +
-                ", height=" + height +
-                ", User='" + User + '\'' +
-                ", favorite_thing='" + favorite_thing + '\'' +
-                ", color='" + color + '\'' +
-                ", petsitting=" + petsitting +
+                ", age=" + age +
+                ", Appointments=" + Appointments +
+                ", Medications=" + Medications +
+                ", Vaccination=" + Vaccination +
+                ", Food=" + Food +
                 '}';
     }
-
-    // getters n setters
-    public String getPetId() {
-        return petId;
-    }
-
-    public void setPetId(String petId) {
-        this.petId = petId;
-    }
-
-    public String gettype() {
-        return type;
-    }
-
-    public void settype(String type) {
-        this.type = type;
-    }
-
+// GETTERS
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    public String getBreed() {
+        return breed;
     }
-
+    public String getType() {
+        return type;
+    }
     public float getWeight() {
         return weight;
     }
-
-    public void setWeight(float weight) {
-        this.weight = weight;
-    }
-
-    public String getUser() {
-        return User;
-    }
-
-    public void setUser(String user) {
-        User = user;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public String getFavorite_thing() {
-        return favorite_thing;
-    }
-
-    public void setFavorite_thing(String favorite_thing) {
-        this.favorite_thing = favorite_thing;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public boolean isPetsitting() {
-        return petsitting;
-    }
-
-    public void setPetsitting(boolean petsitting) {
-        this.petsitting = petsitting;
+    public int getAge() {
+        return age;
     }
 
 
-    // u nedd to add to get the service on the pet objects
-    // methods add service to the pet so when i call pets i can see the services associated
-    public void addService(Services service) {
-        services.add(service);
-    }
-    // if i call getservices i can retrive it
-    public ArrayList<Services> getServices(){
-        return services;
-    }
+    //to get the service on the pet objects
+    public List<Vaccinations> getVaccinations() {return Vaccination;}
+    public List<Medications> getMedications()   { return Medications ;}
+    public List<Appointments> getAppointments() { return Appointments;}
+    public List<Food> getFoods()               { return Food; }
 
 
 

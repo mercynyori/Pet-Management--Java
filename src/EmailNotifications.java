@@ -1,12 +1,12 @@
-public class EmailNotifications extends NotificationService implements INotification {
-
-    @Override
-    public void sendNotification(String recipient, String message) {
-
-    }
+public class EmailNotifications extends NotificationService {
 
     @Override
     void connect() {
 
+    }
+
+    @Override
+    public void send(String emailAddress, String message) {
+        System.out.println("[EMAIL to " + emailAddress + "] " + message);
     }
 }

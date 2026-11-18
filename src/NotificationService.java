@@ -5,4 +5,6 @@ public abstract class NotificationService {
      void alerts(String recipient, String message ){
          System.out.println("Upcoming event: " + message);
      }
+
+    public abstract void send(String emailAddress, String message);
 }

@@ -1,4 +1,6 @@
-public class SMSNotifications extends NotificationService implements INotification{
+import Interface.INotification;
+
+public class SMSNotifications extends NotificationService implements INotification {
     @Override
     public void sendNotification(String recipient, String message) {
         System.out.println("SMS Notifications: " + message);
