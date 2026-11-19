@@ -14,9 +14,11 @@ public class Main {
 
        // pet2 and its stuff
         Pet Orange = new Pet("Orange", "Cat",10.7F, "Siamese",3);
+        Orange.getAppointments().add(new Appointments("Follow Up", "She had an injury need follow ups",LocalDate.now().atStartOfDay()));
         Mackenzie.addpet(Orange);
         //System.out.println(Mackenzie.getPets());
-        System.out.println(Hunter.getAppointments());
+       // System.out.println(Hunter.getAppointments());
+        System.out.println(Orange.getAppointments());
 
 
 

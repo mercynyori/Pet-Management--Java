@@ -17,6 +17,7 @@ public class Appointments extends Services{
                 "name ='" + name + '\'' +
                 " description = " + description + '\'' +
                 " date = " + date + '\'' +
+                "venue = " + venue + '\'' +
                 '}';
     }
 

@@ -1,32 +1,36 @@
-//public class Medications extends Services {
+import java.time.LocalDateTime;
 
+public class Medications extends Services {
+     private int frequency;
 
-   // public Medications(Pet pet, String name, String description, String status) {
-  //      super(pet, name, description, status);
-  //  }
+    public Medications(String name, String description, LocalDateTime date) {
+        super(name, description, date);
+        this.frequency = frequency;
+    }
 
- //   @Override
- //   public String toString() {
- //       return "Medications{" +
-        //        "pet = " + pet +
-        //        ", name = " + name +
-        //        ", description = " + description +
-        //", status = " + status +
-         //       '}';
-   // }
+    @Override
+    public String toString() {
+        return "Medications{" +
+                "name='" + name + '\'' +
+                "description = " + name + '\'' +
+                "date = " + date + '\'' +
+                "frequency = " + frequency + '\'' +
+                '}';
+    }
 
-  //  public void completedMedication(){
-    //    status = "Completed";
-    //    System.out.println(" Medication completed!");
-   // }
+    // inherited methods from Services
+    @Override
+    String getMoreInfo() {
+        return "";
+    }
 
-   // @Override
-   // void getServiceDetails() {
-    //}
+    @Override
+    String getServiceType() {
+        return "";
+    }
 
-   //@Override
-  //  void serviceStatus() {
-     //   System.out.println("Medication taken!");
-
-   // }
-//}
+    // its onw method
+    public int getFrequency(){
+        return frequency;
+    }
+}
