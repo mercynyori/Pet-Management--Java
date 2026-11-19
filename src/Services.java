@@ -1,40 +1,49 @@
-// this is an abstract class it cannot be instantiated
-public abstract class Services {
-    protected Pet pet;
-    protected String name;
-   // protected LocalDateTime serviceDate;
-    protected  String description;
-    protected String status;
+import java.time.LocalDateTime;
 
-    // constructor
-    public Services(Pet pet, String name, String description,
-                    String status) {
-        this.pet = pet;
+/** this is an abstract class it cannot be instantiated
+ * ITS the parent of vaccination, medication, appointments
+ * it will carry the methods that they will all share some that
+ * are a must(abstarct)
+ * also it will hold the reminder message
+ */
+
+public abstract class Services {
+    protected String name;  //name like check, vitamins, rabbies
+    protected  String description;  // extra info about the service
+    protected LocalDateTime date;  // date of service
+
+
+    // constructors
+    public Services(String name, String description,LocalDateTime date) {
         this.name = name;
         this.description = description;
-        //this.serviceDate = serviceDate;
-        this.status = status;
-    }
-
-    public Services() {
+        this.date = date;
 
     }
 
-    // methods
-    public void ScheduleService(){
-        status = "Scheduled";
-        System.out.println("Service scheduled!");
+    // getters
+    public String getName() {
+        return name;
     }
 
-    public void CancelService(){
-        status = "Cancelled";
-        System.out.println("Service Cancelled!");
-
+    public String getDescription() {
+        return description;
     }
-    // MUST across the related classes
-    abstract void getServiceDetails();
-    abstract void serviceStatus();
+
+    public LocalDateTime getDate() {
+        return date;
+    }
 
 
+// methods
+    // MUST across vaccination, medication and appointment  classes
+    abstract String getMoreInfo();
+    abstract String getServiceType();
+
+
+    // reminder message to the user
+    public String  getReminder(){
+        return "Reminder: " + getServiceType() + "on " + date + "- " + description;
+    }
 
 }

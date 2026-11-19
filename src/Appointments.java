@@ -1,43 +1,42 @@
-public class Appointments extends Services {
-    String doctor_name;
-    int appointmentId;
+import java.time.LocalDateTime;
 
-    public Appointments(Pet pet, String name, String description, String status) {
-        super(pet, name, description, status);
+public class Appointments extends Services{
+
+    String venue;
+
+
+// contructors
+    public Appointments(String name, String description, LocalDateTime date) {
+        super(name, description, date);
+        this.venue = venue;
     }
 
-    public Appointments() {
-        super();
-    }
-
-    // to avoid returning reference
     @Override
     public String toString() {
         return "Appointments{" +
-                " pet = " + pet +
-                ", name = " + name +
-                ", description = " +description +
-                ", status = "+status +
+                "name ='" + name + '\'' +
+                " description = " + description + '\'' +
+                " date = " + date + '\'' +
                 '}';
     }
 
-    // unique method for appointments
-    //public void rescheduleAppointment( LocalDateTime newDate){
-      //  serviceDate = newDate;
-      //  status = "Scheduled";
-       // System.out.println("Appointment rescheduled!");
-   // }
-// abstract methods from services that appointments must implement
+    // inherited from services
     @Override
-    void getServiceDetails() {
+    String getMoreInfo() {
+        return "";
     }
 
     @Override
-    void serviceStatus() {
-        System.out.println("Appointment done!");
+    String getServiceType() {
+        return "";
+    }
 
+    // its own method
+    public String getvenue(){
+        return venue;
     }
 }
+
 
 
 
