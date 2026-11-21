@@ -1,29 +1,42 @@
 import java.time.LocalDateTime;
+/*
+this holds the vaccination of the pets and extends from the parent class of services
+ */
 
-//public class Vaccinations extends Services {
-  //  String vaccinationId;
+public class Vaccinations extends Services {
+      private String veterinary_doc;
 
-   // public Vaccinations(Pet pet, String name, String description, String status) {
-      //  super(pet, name, description, status);
-   // }
+    //constructor
+    public Vaccinations(String name, String description, LocalDateTime date) {
+        super(name, description, date);
+        this.veterinary_doc = veterinary_doc;
+    }
 
-   // @Override
-  //  public String toString() {
-     //   return "Vaccinations{" +
-      //          "pet = " + pet +
-       //         ", name = " + name +
-         //       ", description = " + description +
-        //        ", status = " + status +
-        //        '}';
-   // }
+    //to change the output to string
+    @Override
+    public String toString() {
+        return "Vaccinations{" +
+                "name='" + name + '\'' +
+                "description = " + description + '\'' +
+                "date = " + date + '\'' +
+                "veterinary_doc = " + veterinary_doc + '\'' +
+                '}';
+    }
 
-   // @Override
-  //  void getServiceDetails() {
-    //    return ;
-   // }
+    //methods implemented from parent
+    @Override
+    String getMoreInfo() {
+        return "";
+    }
 
-  //  @Override
-  //  void serviceStatus() {
-     //   System.out.println("Vaccination done!");
-  //  }
+    @Override
+    String getServiceType() {
+        return "";
+    }
 
+    //unique method
+    public String getVeterinary_doc(){
+        return veterinary_doc;
+    }
+
+}

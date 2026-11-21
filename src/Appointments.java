@@ -1,16 +1,20 @@
 import java.time.LocalDateTime;
+/*
+this holds the appointments of the pets
+extends the service
+ */
 
 public class Appointments extends Services{
-
     String venue;
 
 
-// contructors
+    // contructors
     public Appointments(String name, String description, LocalDateTime date) {
         super(name, description, date);
         this.venue = venue;
     }
 
+    //
     @Override
     public String toString() {
         return "Appointments{" +

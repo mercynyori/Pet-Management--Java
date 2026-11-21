@@ -12,9 +12,9 @@ public class Pet {
     //  a container so that the pets store vaccination, medication and app and food
     // the services for each pet never mixes
     List<Appointments> Appointments = new ArrayList<>();
-    //List<Medications> Medications = new ArrayList<>();
-    //List<Vaccinations> Vaccination = new Vaccinations();
-    List<Food> Food = new ArrayList<>();
+    List<Medications> Medications = new ArrayList<>();
+    List<Vaccinations> Vaccinations = new ArrayList<>();
+    List<Food> Foods = new ArrayList<>();
 
 
     //  constructors
@@ -39,7 +39,7 @@ public class Pet {
                 ", Appointments=" + Appointments +
                // ", Medications=" + Medications +
                 //", Vaccination=" + Vaccination +
-                ", Food=" + Food +
+                ", Food=" + Foods +
                 '}';
     }
 // GETTERS
@@ -61,9 +61,17 @@ public class Pet {
 
 
     //to get the service on the pet objects  an empty container to hold
-   // public List<Vaccinations> getVaccinations() {return Vaccination;}
-    //public List<Medications> getMedications()   { return Medications ;}
-    public List<Appointments> getAppointments() { return Appointments;}
-    public List<Food> getFoods()               { return Food; }
+    public List<Appointments> getAppointments() {
+        return Appointments;
+    }
+    public List<Medications> getMedications(){
+        return Medications;
+    }
+    public List<Vaccinations> getVacccinations(){
+        return Vaccinations;
+    }
+    public List<Food> getFoods(){
+        return Foods;
+    }
 
 }
