@@ -1,3 +1,5 @@
+package system;
+
 import Interface.INotification;
 /*
 THIS implements the interface for notifications
