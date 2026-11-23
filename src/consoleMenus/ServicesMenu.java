@@ -1,6 +1,6 @@
 package consoleMenus;
 
-public class ServiceMenu {
+public class ServicesMenu {
 
     //
     //
