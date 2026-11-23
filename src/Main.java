@@ -31,8 +31,9 @@ public class Main {
        // System.out.println(Orange.getMedications());
         //System.out.println(Orange.getVacccinations());
         //System.out.println(Hunter.getVacccinations());
-        System.out.println(Hunter.getFoods());
-        System.out.println(Orange.getFoods());
+        //System.out.println(Hunter.getFoods());
+        //System.out.println(Orange.getFoods());
+      //  System.out.println();
 
 
 

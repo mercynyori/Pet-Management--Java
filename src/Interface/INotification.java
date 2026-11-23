@@ -7,6 +7,6 @@ then the one that implements this methds explain how the methods should work
 
 public interface INotification {
     void sendNotification (String receiver, String message);
-    void connect(String message);
+    void connect(String message, String receiver);
 
 }

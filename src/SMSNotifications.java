@@ -1,14 +1,21 @@
 import Interface.INotification;
+/*
+SMS notification are done here
+ */
+public class SMSNotifications  implements INotification {
 
-//public class SMSNotifications extends NotificationService implements INotification {
-   // @Override
-  //  public void sendNotification(String recipient, String message) {
-   //     System.out.println("SMS Notifications: " + message);
-  //  }
 
-   // @Override
-   // void connect() {
-    //    System.out.println("SMS NOTIFICATION CONNECTED!!");
 
-  //  }
-//}
+    // from the interface
+    @Override
+    public void sendNotification(String receiver, String message) {
+        System.out.println("SMS sent to " + receiver + " : "+ "!");
+
+    }
+
+    @Override
+    public void connect(String message, String receiver) {
+        System.out.println("Connected to the " + receiver);
+
+    }
+}
