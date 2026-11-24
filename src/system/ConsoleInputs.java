@@ -45,7 +45,17 @@ public class ConsoleInputs {
         catch ( NumberFormatException e) {
             System.out.println("Please return a whole number");
         }
-    };
+    }
+
+    /*
+    This method is to make sure that the numbers are like atleast
+    decimals
+ */
+    public float readDoublefromUser(){
+        while(true){
+            try()
+        }
+    }
 
 
 }
