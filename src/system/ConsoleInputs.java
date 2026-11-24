@@ -53,7 +53,9 @@ public class ConsoleInputs {
  */
     public float readDoublefromUser(){
         while(true){
-            try()
+            try(
+                    double value =
+                    )
         }
     }
 
